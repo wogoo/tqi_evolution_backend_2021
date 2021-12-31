@@ -24,7 +24,10 @@
 - [ ] Login de cliente
 - [ ] Solicitação de empréstimo
 - [ ] Acompanhamento das solicitações de empréstimo
+
 <br id="techs">
+
+
 ### 🛠 Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
