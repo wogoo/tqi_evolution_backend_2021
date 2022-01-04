@@ -36,7 +36,7 @@ data class LoanModel  (
     ) {
     @Column
     @Enumerated(EnumType.STRING)
-    var status: LoanStatus? = null
+    var status: LoanStatus? = LoanStatus.ATIVO
         set(value) {
             if (field == LoanStatus.CANCELADO || field == LoanStatus.DELETADO)
                 throw BadRequestException(Errors.MP2002.message.format(field), Errors.MP2002.code)

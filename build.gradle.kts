@@ -30,6 +30,7 @@ dependencies {
 	implementation("org.flywaydb:flyway-mysql:8.2.3")
 	implementation("org.springdoc:springdoc-openapi-ui:1.6.2")
 	implementation ("io.jsonwebtoken:jjwt:0.9.1")
+	implementation("org.thymeleaf:thymeleaf:3.0.11.RELEASE")
 
 	runtimeOnly ("mysql:mysql-connector-java")
 

@@ -4,9 +4,11 @@ import com.wogoo.tqbank.tqbank.controller.request.PostCustomerRequest
 import com.wogoo.tqbank.tqbank.controller.request.PostLoanRequest
 import com.wogoo.tqbank.tqbank.controller.response.CustomerResponse
 import com.wogoo.tqbank.tqbank.controller.response.LoanResponse
+import com.wogoo.tqbank.tqbank.controller.response.PageResponse
 import com.wogoo.tqbank.tqbank.enums.CustomerStatus
 import com.wogoo.tqbank.tqbank.model.CustomerModel
 import com.wogoo.tqbank.tqbank.model.LoanModel
+import org.springframework.data.domain.Page
 
 fun PostCustomerRequest.toCustomerModel(): CustomerModel {
     return CustomerModel(name = this.name, email =  this.email, password = this.password, cpf = this.cpf,
@@ -43,5 +45,10 @@ fun LoanModel.toResponse(): LoanResponse {
         customer = this.customer,
         status = this.status,
         installments = this.installments,
+
     )
+}
+
+fun <T> Page<T>.toPageResponse(): PageResponse<T> {
+    return PageResponse(this.content, this.number, this.totalElements, this.totalPages  )
 }
