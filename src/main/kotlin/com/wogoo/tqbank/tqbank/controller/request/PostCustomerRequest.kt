@@ -5,6 +5,7 @@ import java.math.BigDecimal
 import javax.validation.constraints.Email
 import javax.validation.constraints.NotEmpty
 import javax.validation.constraints.NotNull
+import javax.validation.constraints.Size
 
 data class PostCustomerRequest (
     @field:NotEmpty(message = "Nome deve ser informado")
@@ -15,9 +16,11 @@ data class PostCustomerRequest (
     var email: String,
 
     @field:NotEmpty(message = "O cpf deve ser informado")
+    @Size(min = 11, max = 11)
     var cpf: String,
 
     @field:NotEmpty(message = "O rg deve ser informado")
+    @Size(max = 9)
     var rg: String,
 
     @field:NotNull(message = "A renda deve ser informada")

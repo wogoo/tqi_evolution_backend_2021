@@ -1,9 +1,12 @@
 package com.wogoo.tqbank.tqbank.extension
 
 import com.wogoo.tqbank.tqbank.controller.request.PostCustomerRequest
+import com.wogoo.tqbank.tqbank.controller.request.PostLoanRequest
 import com.wogoo.tqbank.tqbank.controller.response.CustomerResponse
+import com.wogoo.tqbank.tqbank.controller.response.LoanResponse
 import com.wogoo.tqbank.tqbank.enums.CustomerStatus
 import com.wogoo.tqbank.tqbank.model.CustomerModel
+import com.wogoo.tqbank.tqbank.model.LoanModel
 
 fun PostCustomerRequest.toCustomerModel(): CustomerModel {
     return CustomerModel(name = this.name, email =  this.email, password = this.password, cpf = this.cpf,
@@ -21,5 +24,24 @@ fun CustomerModel.toResponse(): CustomerResponse {
         zip = this.zip,
         address = this.address,
         country = this.country
+    )
+}
+
+fun PostLoanRequest.toLoanModel(customer: CustomerModel): LoanModel {
+    return LoanModel(
+        valueLoan = this.valueLoan,
+        installments = this.installments,
+        customer = customer
+    )
+}
+
+fun LoanModel.toResponse(): LoanResponse {
+    return LoanResponse(
+        id = this.id,
+        valueLoan = this.valueLoan,
+        loanPrice = this.loanPrice,
+        customer = this.customer,
+        status = this.status,
+        installments = this.installments,
     )
 }
