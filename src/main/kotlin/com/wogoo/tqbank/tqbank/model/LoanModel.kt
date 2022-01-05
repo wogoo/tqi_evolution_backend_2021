@@ -3,10 +3,9 @@ package com.wogoo.tqbank.tqbank.model
 import com.wogoo.tqbank.tqbank.enums.Errors
 import com.wogoo.tqbank.tqbank.enums.LoanStatus
 import com.wogoo.tqbank.tqbank.exception.BadRequestException
-import org.hibernate.type.LocalDateType
-import javax.persistence.*
 import java.math.BigDecimal
 import java.time.LocalDateTime
+import javax.persistence.*
 
 @Entity(name = "loan")
 data class LoanModel  (
@@ -41,7 +40,6 @@ data class LoanModel  (
             if (field == LoanStatus.CANCELADO || field == LoanStatus.DELETADO)
                 throw BadRequestException(Errors.MP2002.message.format(field), Errors.MP2002.code)
             field = value
-
         }
 
     constructor(

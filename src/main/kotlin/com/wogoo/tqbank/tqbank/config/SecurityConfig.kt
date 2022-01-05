@@ -21,6 +21,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.web.cors.CorsConfiguration
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource
 import org.springframework.web.filter.CorsFilter
+import java.util.*
 
 @Configuration
 @EnableWebSecurity
@@ -32,16 +33,18 @@ class SecurityConfig(
     private val customEntryPoint: CustomAuthenticationEntryPoint
 ) : WebSecurityConfigurerAdapter() {
 
-    private val PUBLIC_MATCHERS = arrayOf<String>()
+    private val PUBLIC_MATCHERS = arrayOf(
+        "/**"
+    )
     private val PUBLIC_POST_MATCHERS = arrayOf(
-        "/customers",
-        "/loans"
+        "/api/v1/customers",
+        "/api/v1/loans"
     )
     private val ADMIN_MATCHERS = arrayOf(
         "/admin/**"
     )
     private val PUBLIC_GET_MATCHERS = arrayOf(
-        "/loans"
+        "/api/v1/loans"
     )
 
     override fun configure(auth: AuthenticationManagerBuilder) {
@@ -75,6 +78,7 @@ class SecurityConfig(
         val source = UrlBasedCorsConfigurationSource()
         val config = CorsConfiguration()
         config.allowCredentials = true
+        config.setAllowedOrigins(Collections.singletonList("http://localhost:8080"));
         config.addAllowedOriginPattern("*")
         config.addAllowedHeader("*")
         config.addAllowedMethod("*")

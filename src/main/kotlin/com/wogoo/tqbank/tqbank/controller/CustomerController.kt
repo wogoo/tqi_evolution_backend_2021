@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*
 import javax.validation.Valid
 
 @RestController
-@RequestMapping("customers")
+@RequestMapping("api/v1/customers")
 class CustomerController(private val customerService: CustomerService) {
 
     @GetMapping("/{id}")

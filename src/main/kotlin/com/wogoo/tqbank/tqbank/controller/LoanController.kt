@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*
 import javax.validation.Valid
 
 @RestController
-@RequestMapping("loans")
+@RequestMapping("api/v1/loans")
 class LoanController(
     private val loanService: LoanService,
     private val customerService: CustomerService) {
