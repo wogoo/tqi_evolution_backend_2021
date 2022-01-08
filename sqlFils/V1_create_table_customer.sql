@@ -1,6 +1,6 @@
 CREATE TABLE customer
 (
-    id int auto_increment primary key,
+    ID BIGSERIAL NOT NULL PRIMARY KEY,
     name       varchar(255)   not null,
     email      varchar(255)   not null unique,
     cpf        varchar(11)    not null unique,

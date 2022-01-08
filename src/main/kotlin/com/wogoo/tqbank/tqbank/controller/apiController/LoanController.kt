@@ -1,4 +1,4 @@
-package com.wogoo.tqbank.tqbank.controller
+package com.wogoo.tqbank.tqbank.controller.apiController
 
 import com.wogoo.tqbank.tqbank.controller.request.PostLoanRequest
 import com.wogoo.tqbank.tqbank.controller.response.LoanResponse

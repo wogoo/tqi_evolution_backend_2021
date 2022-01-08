@@ -44,7 +44,9 @@ class SecurityConfig(
         "/admin/**"
     )
     private val PUBLIC_GET_MATCHERS = arrayOf(
-        "/api/v1/loans"
+        "/api/v1/loans",
+        "/v3/api-docs",
+        "/swagger-ui.html"
     )
 
     override fun configure(auth: AuthenticationManagerBuilder) {
@@ -69,7 +71,7 @@ class SecurityConfig(
 
     override fun configure(web: WebSecurity) {
         web.ignoring().antMatchers("/v3/api-docs", "/configuration/ui", "/swagger-resources/**", "/configuration/**",
-            "/swagger-ui.html", "/webjars/**","/swagger-ui/**", "/javainuse-openapi/**")/*.anyRequest() <- error -> /v3/api-docs*/
+            "/swagger-ui.html", "/webjars/**","/swagger-ui/**", "/javainuse-openapi/**")
 
     }
 
