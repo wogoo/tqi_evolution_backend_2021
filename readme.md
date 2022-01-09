@@ -5,7 +5,7 @@
     <li>Solicitação de empréstimo</li>
     <li> Acompanhamento das solicitações de empréstimo</li>
 </ul></p>
-<p align="center" id="license">  
+
 
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
    <a href="https://github.com/tgmarinho/README-ecoleta/stargazers">
@@ -19,6 +19,8 @@
 </h4>
 
 ### Features 
+
+<p align="center" id="license">  
 
 - [ ] Cadastro de cliente
 - [ ] Login de cliente
@@ -35,6 +37,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Flyway](https://flywaydb.org/)
 - [MySQL](https://www.mysql.com/)
+- [OpenApi](https://swagger.io/specification/)
 
 
 
